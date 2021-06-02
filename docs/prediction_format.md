@@ -1,7 +1,6 @@
 # Prediction file format
 
-Please read this page carefully to make sure that output prediction file format is compatible with the evaluation code. Sample prediction files are also provided in folder (TOdo)
-
+Please read this page carefully to make sure that output prediction file format is compatible with the evaluation code. Sample prediction files are also provided in folder sample_pred_format. Please check corresponding [ReadMe](sample_pred_format/ReadMe.md) for details.
 
 There can be two ways of submitting the prediction results:
 
@@ -26,7 +25,7 @@ For each predicted person in the image, a dictionary with following keys needs t
 
 **allSmplJoints3d** : (shape : (127, 3), units : meters). 3d joints in camera coordinates. This is used to calculate the MPJPE/NMJE error for body, face and hands after aligning the root joint of prediction and ground truth.
 
-## SMPL-X dictionaly (uploading parameters):
+## SMPL-X dictionary (uploading parameters):
 For each predicted person in the image, a dictionary with following keys needs to be generated. **Note that the data type of all the parameters is np.ndarray.**
 
 **gender** : (Optional) male/female/neutral. If no gender is provided neutral will be used as default.
@@ -35,17 +34,17 @@ For each predicted person in the image, a dictionary with following keys needs t
 
 **num_betas** : (Optional) 10-300. If num_betas not provided, 10 betas will be used as default.
 
-**pose2rot** : (Optional) True/False. If pose2rot not provided, True will be used as default. If the pose parameters are in rotation matrix format then pose2rot must be set to False.
+**pose2rot** : True/False. If pose2rot not provided, True will be used as default and pose parameters are expected in vector format. If the pose parameters are in rotation matrix format then pose2rot must be set to False.
 
 **joints** : (shape : (24,2), units : pixel coordinate). 2d projected joints location in the image. This is used to match the predition with the ground truth.
 
 **params** : Following parameters for SMPL-X models should be provided in dictionary form. Note that if **pose2rot** is True then pose parameters are in vector form and if it is False then pose parameters must be in matrix form. Corresponding shape for vector and matrix form are denoted by v_shape and m_shape.
 
-> **transl** : (shape : (1,3))
+> **transl** : (v_shape : (1,3), m_shape : (1,3))
 
-> **betas** : (shape : (1,num_betas))
+> **betas** : (v_shape : (1,num_betas), m_shape : (1,num_betas))
 
-> **expression** : (shape : (1,10))
+> **expression** : (v_shape : (1,10), m_shape : (1,10))
 
 > **global_orient** : (v_shape : (1,3), m_shape : (1,1,3,3))
 
@@ -83,15 +82,15 @@ For SMPL evaluation, neutral gender and 10 betas are used by default. **Note tha
 
 **age** : (Optional) adult/kid. If no age is provided adult will be used as default.
 
-**pose2rot** : (Optional) True/False. If pose2rot not provided, True will be used as default. If the params are in rotation matrix format then pose2rot must be set to False.
+**pose2rot** : True/False. If pose2rot not provided, True will be used as default and pose parameters are expected in vector format. If the params are in rotation matrix format then pose2rot must be set to False.
 
 **joints** : (shape : (24,2), units : pixel coordinate). 2d projected joints location in the image
 
 **params** : Following parameters for SMPL-X models should be provided in dictionary form. Following parameters for SMPL-X models should be provided in dictionary form. Note that if **pose2rot** is True then pose parameters are in vector form and if it is False then pose parameters must be in matrix form. Corresponding shape for vector and matrix form are denoted by v_shape and m_shape.
 
-> **transl** : (shape : (1,3)).
+> **transl** : (v_shape : (1,3), m_shape : (1,3))
 
-> **betas** : (shape : (1,num_betas))
+> **betas** : (v_shape : (1,num_betas), m_shape : (1,num_betas))
 
 > **global_orient** : (v_shape : (1,1,3), m_shape : (1,1,3,3))
 

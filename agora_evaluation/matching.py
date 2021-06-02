@@ -100,7 +100,6 @@ def get_matching(args, df, imgWidth, imgHeight):
     return df
 
 
-# Todo work on this function and make it less confusing
 def match_2d_greedy(
         imgWidth,
         imgHeight,
@@ -128,7 +127,6 @@ def match_2d_greedy(
     predList = np.arange(len(pred_kps))
     gtList = np.arange(len(gtkp))
     # get all pairs of elements in pred_kps, gtkp
-    # Todo optimize this approach
     # all combinations of 2 elements from l1 and l2
     combs = list(product(predList, gtList))
 

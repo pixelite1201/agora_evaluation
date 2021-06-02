@@ -5,14 +5,14 @@ If you just want to project the joints and vertices using the SMPL/SMPL-X parame
 ## Prerequisites
 Create and activate a `Python 3.8` virtual environment:
 ```
-python 3.8 -m venv path_to_virtual_env
+python3.8 -m venv path_to_virtual_env
 source path_to_virtual_env/bin/activate
 ```
 
 ## Installation
-First, checkout the code and its submodule [smplx](https://github.com/jcpassy/smplx):
+First, checkout the code [smplx](https://github.com/vchoutas/smplx.git):
 ```
-$ git clone --recurse-submodules https://gitlab.tuebingen.mpg.de/ppatel/agora_evaluation.git
+$ git clone https://github.com/vchoutas/smplx.git
 ```
 
 and install both packages with `pip`:
@@ -20,6 +20,7 @@ and install both packages with `pip`:
 $ pip install .
 $ pip install ./smplx
 ```
+
 ## Download
 
 ### Download the AGORA Images:

@@ -153,6 +153,8 @@ def check_smpl(pred_file):
         logging.warning(' Only first 24 joints will be used in matching but you are providing {} joints'.format(joints.shape[0]))
 
 def check_smplx(pred_file):
+    import ipdb
+    ipdb.set_trace()
     pred_param = pickle.load(open(pred_file,'rb'),encoding='latin1')
         
     if 'allSmplJoints3d' in pred_param.keys() and 'verts' in pred_param.keys():
@@ -172,7 +174,7 @@ def check_smplx(pred_file):
         num_betas = 10
         #Optional parameter, by default neutral
         if 'gender' in pred_param.keys():
-            gender = pre_param['gender']
+            gender = pred_param['gender']
             if gender not in ['male', 'female', 'neutral']:
                 raise KeyError('Gender {} is not correct. It should be either male, female or neutral'.format(gender))
         #Optional parameter, by default adult
@@ -205,6 +207,7 @@ def check_smplx(pred_file):
     else:
         raise KeyError('Either params or allSMPLJoints3d and verts needs to be provided in key. Please check the ReadMe for details and run the evaluation code on github')
 
+    assert 'joints' in pred_param.keys()
     joints = pred_param['joints']
     assert_type(pred_param['joints'],np.ndarray,'joints')
     #Only first 24 joints will be used for matching
@@ -234,7 +237,7 @@ def check_pred_file(*args):
     with zipfile.ZipFile(path_to_zip_file, 'r') as zip_ref:
         zip_ref.extractall(args.extractZipFolder)
 
-    all_files = glob(os.path.join(args.extractZipFolder, args.predZip.split('/')[-1].replace('.zip',''), '*'))
+    all_files = glob(os.path.join(args.extractZipFolder, 'predictions', '*'))
     if len(all_files) == 0:
         raise EOFError('No files are present inside zip')
     if args.modeltype=='SMPL':

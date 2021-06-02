@@ -156,34 +156,6 @@ def plot_occ_error(df, x, y, xlabel, ylabel, title, outfile):
     plt.savefig(outfile)
 
 
-def plot_x_error(df, x, y, xlabel, ylabel, title, outfile):
-
-    sns.set(style="whitegrid")
-
-    ax = sns.catplot(x=x, y=y, data=df, kind='bar')
-    ax.fig.set_size_inches(20, 10)
-
-    axes = ax.axes.flatten()
-    axes[0].set_xlabel(xlabel=xlabel, fontsize=20)
-    axes[0].set_ylabel(ylabel=ylabel, fontsize=20)
-    ax.set_xticklabels(['0-10',
-                        '10-20',
-                        '20-30',
-                        '30-40',
-                        '40-50',
-                        '50-60',
-                        '60-70',
-                        '70-80',
-                        '80-90',
-                        '90-100'],
-                       rotation='horizontal',
-                       fontsize=20)
-    ax.set_yticklabels(rotation='horizontal', fontsize=20)
-    axes[0].set_title(title, fontsize=20)
-    axes[0].legend(loc='upper left', fontsize=20)
-    plt.savefig(outfile)
-
-
 def plot_occ_error(df, x, y, xlabel, ylabel, title, outfile):
 
     sns.set(style="whitegrid")

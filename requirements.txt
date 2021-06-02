@@ -9,4 +9,5 @@ ipdb
 trimesh
 torch==1.4.0
 tqdm
+loguru
 ./smplx
