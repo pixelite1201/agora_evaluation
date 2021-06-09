@@ -58,6 +58,8 @@ def run_projection(*args):
     parser.add_argument('--debug', action='store_true')
 
     args = parser.parse_args(*args)
+    #Because AGORA pose params are in vector format
+    args.pose2rot = True 
     imgHeight = args.imgHeight
     imgWidth = args.imgWidth
 

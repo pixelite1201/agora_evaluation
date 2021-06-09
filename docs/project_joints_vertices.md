@@ -34,7 +34,7 @@ Download the [SMPL-X fits](https://agora.is.tue.mpg.de/) and extract it in demo/
 
 Download the [SMPL-X](https://smpl-x.is.tue.mpg.de/) model and place it in demo/model/smplx. Download the npz version and rename the models to SMPLX_MALE.npz, SMPLX_FEMALE.npz and SMPLX_NEUTRAL.npz
 
-Download the kid_template_file from where??
+Download the kid template vertices from [AGORA](https://agora.is.tue.mpg.de) and place them in utils.
 
 ### For SMPL projection:
 Download the [SMPL fits](https://agora.is.tue.mpg.de/) model and extract it in demo/GT_fits
@@ -42,7 +42,7 @@ Download the [SMPL fits](https://agora.is.tue.mpg.de/) model and extract it in d
 Download the [SMPL](https://smpl.is.tue.mpg.de/) model and place it in demo/model/smpl. 
 Download the npz version and rename the models to SMPL_MALE.npz, SMPL_FEMALE.npz, SMPL_NEUTRAL.npz
 
-Download the kid_template_file from where??
+Download the kid template vertices from [AGORA](https://agora.is.tue.mpg.de) and place them in utils.
 
 # Run
 Once you have finished installing and downloaded the data, you can run `project_joints` executable. This will add following fields in all the .pkl files in the demo/Cam folder.
@@ -56,14 +56,20 @@ Once you have finished installing and downloaded the data, you can run `project_
 ### SMPL-X
 
 ```
-project_joints --imgFolder demo/images --loadPrecomputed demo/Cam --modeltype SMPLX --kid_template_path template/smplx_kid_template.obj  --modelFolder demo/model --gt_model_path demo/GT_fits/ --imgWidth 3840 --imgHeight 2160
+project_joints --imgFolder demo/images --loadPrecomputed demo/Cam --modeltype SMPLX --kid_template_path utils/smplx_kid_template.npy  --modelFolder demo/model --gt_model_path demo/GT_fits/ --imgWidth 3840 --imgHeight 2160
 
 ```
 
 ### SMPL
 ```
-project_joints --imgFolder demo/images --loadPrecomputed demo/Cam --modeltype SMPL --kid_template_path template/smpl_kid_template.obj  --modelFolder demo/model --gt_model_path demo/GT_fits/ --imgWidth 3840 --imgHeight 2160
+project_joints --imgFolder demo/images --loadPrecomputed demo/Cam --modeltype SMPL --kid_template_path utils/smpl_kid_template.npy  --modelFolder demo/model --gt_model_path demo/GT_fits/ --imgWidth 3840 --imgHeight 2160
 
 ```
+
 #### For 1280x720:
+
 Just replace the --imgWidth and --imgHeight with 1280 and 720 in above commands.
+
+# Debug:
+
+If you need to debug the projection, use --debug boolean flag and provide --debug_path to store output images. This will generate images with projected ground truth 2d keypoints.

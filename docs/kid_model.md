@@ -9,5 +9,5 @@ model_smplx_kid = smplx.create(modelFolder, model_type='smplx', age='kid', kid_t
 model_smpl_kid = smplx.create(modelFolder, model_type='smpl', age='kid', kid_template_path=smpl_kid_template_path)
 
 ```
-If num_betas is set to x it will create a model with x+1 betas where the x+1th shape component is the interpolation of SMPL/SMPL-X and SMIL/SMIL-X template.
-Note that it is recommended to use gender: 'male' for male kids and gender:'neutral' for female kids. 
+If num_betas is set to **n** it will create a model with **n+1** betas where the **n+1th** shape component is the interpolation of SMPL/SMPL-X and SMIL/SMIL-X template.
+Note that it is recommended to use gender= 'male' for male kids and gender='neutral' for female kids. 

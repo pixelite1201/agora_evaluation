@@ -71,6 +71,8 @@ $ evaluate_agora --pred_path demo/predictions_smpl/ --result_savePath demo/resul
 
 ```
 
+To run the evaluation for 1280x720 version, just provide --imgWidth 1280 and --imgHeight 720 as parameter to `evaluate_agora` executable. Note that the --imgFolder and --loadPrecomputed should also be replaced with 1280x720 version.
+
 If you need to debug the projection of ground truth and prediction keypoints in image please provide '--debug' boolean flag and '--debug_path' as the path to output the images. This will generate images in debug_path where left part show the overlaid prediction keypoints and right part show the overlaid ground truth keypoints.
 
 ```
@@ -103,7 +105,7 @@ Here are some great resources that we used:
 
 
 # Acknowledgement
-Special thanks to [Vassilis Choutas](https://ps.is.tuebingen.mpg.de/person/vchoutas) for sharing the pytorch code used in fitting the SMPL-X to scans.
+Special thanks to [Vassilis Choutas](https://ps.is.tuebingen.mpg.de/person/vchoutas) for sharing the pytorch code used in fitting the SMPL-X model to the scans.
 
 # Contact
 For questions, please contact agora@tue.mpg.de.

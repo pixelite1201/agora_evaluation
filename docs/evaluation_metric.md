@@ -50,8 +50,8 @@ NMVE (Normalized mean vertex error):  We normalize the MVE error by the standard
 
 
 
-
-
+## Analysis:
+We also provide detail analysis with respect to percentage of occlusion, distance of subject from the center of the image and subject orientation with respect to the camera. To see how well your method performs across these dimensions you could check the *_occlusion.png, *_xlocation.png and *_orientation.png plot.
 
 
 

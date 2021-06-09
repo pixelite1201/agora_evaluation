@@ -61,7 +61,7 @@ For each predicted person in the image, a dictionary with following keys needs t
 > **jaw_pose** : (v_shape : (1,3), m_shape : (1,1,3,3))
 
 ### Very important: 
-If you used 1280x720 resolution images **joints** field should always be converted to 3840x2160 format before submitting. To do this:
+If you used 1280x720 resolution images **joints** field should always be converted to 3840x2160 format before submitting on evaluation server. To do this:
 
 ```
 joints_4k = joints_720 *(2160/720)
@@ -97,7 +97,7 @@ For SMPL evaluation, neutral gender and 10 betas are used by default. **Note tha
 > **body_pose** : (v_shape : (1,23,3), m_shape : (1,23,3,3))
 
 ### Very important: 
-If you used 1280x720 resolution images **joints** field should always be converted to 3840x2160 format before submitting. To do this:
+If you used 1280x720 resolution images for prediction, **joints** field should always be converted to 3840x2160 format before submitting. To do this:
 
 ```
 joints_4k = joints_720 *(2160/720)
