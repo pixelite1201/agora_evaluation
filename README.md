@@ -51,7 +51,7 @@ Rename the models to SMPL_MALE.pkl, SMPL_FEMALE.pkl, SMPL_NEUTRAL.pkl if needed.
 Download the vertex indices from [SMPL-X](https://smpl-x.is.tue.mpg.de/) from the section **MANO and FLAME vertex indices** and place it in utils.
 
 ### SMPL-X/SMPL kid template model download
-Download the kid template vertices from [AGORA](https://agora.is.tue.mpg.de) and place them in utils.
+Download the kid template vertices from section SMIL/SMIL-X template section of [AGORA Downloads](https://agora.is.tue.mpg.de) and place them in utils.
 
 ### Ground truth dataframe download
 Ground truth dataframe consists of all the information corresponding to the images in the dataset e.g. camera, joints, vertices, ground truth fit path etc.
