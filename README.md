@@ -1,3 +1,7 @@
+# AGORA: Avatars in Geography Optimized for Regression Analysis
+![AGORA Images](./images/image.gif)
+
+
 This page contains information about how to use the code to evaluate on AGORA validation/test images. 
 
 If you are interested in other sections please see the following pages:
