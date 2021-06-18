@@ -153,8 +153,6 @@ def check_smpl(pred_file):
         logging.warning(' Only first 24 joints will be used in matching but you are providing {} joints'.format(joints.shape[0]))
 
 def check_smplx(pred_file):
-    import ipdb
-    ipdb.set_trace()
     pred_param = pickle.load(open(pred_file,'rb'),encoding='latin1')
         
     if 'allSmplJoints3d' in pred_param.keys() and 'verts' in pred_param.keys():
