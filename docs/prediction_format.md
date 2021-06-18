@@ -1,6 +1,6 @@
 # Prediction file format
 
-Please read this page carefully to make sure that output prediction file format is compatible with the evaluation code. Sample prediction files are also provided in folder sample_pred_format. Please check corresponding [ReadMe](sample_pred_format/ReadMe.md) for details.
+Please read this page carefully to make sure that output prediction file format is compatible with the evaluation code. Sample prediction files are also provided in folder sample_pred_format. Please check corresponding [ReadMe](../sample_pred_format/ReadMe.md) for details.
 
 There can be two ways of submitting the prediction results:
 
@@ -104,7 +104,7 @@ joints_4k = joints_720 *(2160/720)
 ```
 
 ## Run check_pred_format
-Once you have generated all the prediction (.pkl) files as explained above, create a zip of the folder containg the files e.g. pred.zip. The following command will extract the pred.zip in extract_zip folder and will verify if the shape and type for all the parameters in the individual pickle file is correct. 
+Once you have generated all the prediction (.pkl) files as explained above, create a zip of the folder name **predictions** containg the files e.g. predictions.zip. The following command will extract the pred.zip in extract_zip folder and will verify if the shape and type for all the parameters in the individual pickle file is correct. 
 ```
 python agora_evaluation/check_pred_format.py --predZip pred.zip --extractZipFolder extract_zip --modeltype SMPLX/SMPL
 ```
