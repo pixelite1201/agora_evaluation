@@ -1,4 +1,5 @@
 # AGORA: Avatars in Geography Optimized for Regression Analysis
+[![arXiv](https://img.shields.io/badge/arXiv-2104.14643-brightgreen)](https://arxiv.org/pdf/2104.14643.pdf)
 ![AGORA Images](./images/image.gif)
 
 
