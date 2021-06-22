@@ -7,7 +7,7 @@ Evaluating a method is done in 2 steps:
 2. Calculating error for corresponding matches
 
 ## Matching:
-Since each image contains multiple person, to match the corresponding prediction with ground truth, we use projected joints in the image. We compute the joints error for all pair of matches and one with minimum error are considered a match. We use bounding boxes to make sure that the matched prediction and ground truth IOU < 0.1. If there is no match found for a particular ground truth, it is included in false negative. Please see the [paper](https://arxiv.org/abs/2104.14643) for more details.
+Since each image contains multiple person, to match the corresponding prediction with ground truth, we use projected joints in the image. We compute the joints error for all pair of matches and one with minimum error are considered a match. We use bounding boxes to make sure that the matched prediction and ground truth IOU >= 0.1. If there is no match found for a particular ground truth, it is included in false negative. Please see the [paper](https://arxiv.org/abs/2104.14643) for more details.
 
 We use the **joints** parameter in prediction dictionary .pkl file for predicted joints and **gt_joints_2d** parameter in dataframe .pkl file for  ground truth joints to perform matching. 
 
