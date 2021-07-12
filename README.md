@@ -61,7 +61,7 @@ Check [Ground Truth dataframe](docs/gt_dataframe.md) to get more details about d
 
 ## Preparation of prediciton data for evaluation
 In short for each predicted person in an image, a dictionary should be generated and stored as pickle file in demo/predictions folder.
-Please check [Predction format](docs/prediction_format.md) to get more details about the format for the output prediction file. Please go through the page carefully. If the output format for prediction file is not correct, the evaluation pipeline will fail.
+Please check [Prediction format](docs/prediction_format.md) to get more details about the format for the output prediction file. Please go through the page carefully. If the output format for prediction file is not correct, the evaluation pipeline will fail.
 
 ## Evaluate predictions
 
