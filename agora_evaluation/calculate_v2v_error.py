@@ -172,15 +172,15 @@ def compute_errors_joints_verts(gt_verts, pred_verts, gt_joints,
         elif flag == 'face':
             gt_dict = {}
             pred_dict = {}
-            gt3d_verts = align_by_wrist(gt3d, gt3d_verts)
-            pred3d_verts = align_by_wrist(pred, pred3d_verts)
-            gt3d = align_by_wrist(gt3d)
-            pred3d = align_by_wrist(pred)
-        elif flag == 'hand':
             gt3d_verts = align_by_neck(gt3d, gt3d_verts)
             pred3d_verts = align_by_neck(pred, pred3d_verts)
             gt3d = align_by_neck(gt3d)
             pred3d = align_by_neck(pred)
+        elif flag == 'hand':
+            gt3d_verts = align_by_wrist(gt3d, gt3d_verts)
+            pred3d_verts = align_by_wrist(pred, pred3d_verts)
+            gt3d = align_by_wrist(gt3d)
+            pred3d = align_by_wrist(pred)
         else:
             raise KeyError(
                 'Incorrect flag provided. Should be either body,face or hand')
