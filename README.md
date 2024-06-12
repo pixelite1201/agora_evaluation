@@ -13,6 +13,10 @@ Project the joints and vertices using the SMPL/SMPL-X parameter file and camera 
 3. [Check prediction file format](docs/prediction_format.md): Check format of the prediction files before submitting for evaluation
 4. [Evaluation metric and protocol](docs/evaluation_metric.md): Details about the evaluation metric and protocols.
 5. [How to use kid model](docs/kid_model.md): Details on how to use kid model with SMPL-X.
+6. [AGORA GT processing](agora_processing_code)
+
+# Update
+ * Released AGORA ground truth data processing code [here](agora_processing_code). Processed files could be obtain on [AGORA](https://agora.is.tue.mpg.de)
 
 # Evaluation on AGORA
 If you want to evaluate the results of your 3D human pose and shape estimation method on AGORA validation images, you can follow the following steps. It is highly recommended to run the evaluation on validation images before submitting the results on test images on evaluatoin server. 
